@@ -7,7 +7,7 @@
 
 int registro() //função responsavél por cadastrar o usuário
 {
-	setlocale(LC_ALL, "Portuguese");
+	setlocale(LC_ALL, "Portuguese"); // setar a linguagem para português
 	
 	//inicio de criação de string
 	
@@ -31,8 +31,8 @@ int registro() //função responsavél por cadastrar o usuário
 	fprintf(file,cpf);  //salvar a variavel
 	fclose(file); //fecha o arquivo
 
-	file = fopen(arquivo, "a");
-	fprintf(file,",");
+	file = fopen(arquivo, "a"); //"a"= atualização do file
+	fprintf(file,","); // , é para dividir as informções do usuário
 	fclose(file);
 	
 	printf("NOME:");
@@ -89,21 +89,21 @@ int consulta()
 	printf("DIGITE O CPF: ");
 	scanf("%s",cpf);
 	
-	system("cls");
+	system("cls"); //limpar a tela
 	
 	FILE*file;
-	file = fopen(cpf,"r");
+	file = fopen(cpf,"r"); //"r"= ler o file
 	
-	if(file == NULL)
+	if(file == NULL) //if= comparação de valores e então fazer a instrução
 	{
 		printf("\t-USUÁRIO NÃO LOCALIZADO-\n\n");
 	}
 	
-	while(fgets(conteudo, 200, file) != NULL )
+	while(fgets(conteudo, 200, file) != NULL ) //while repetição enquanto o valor for verdadeiro
 	{
 	printf("\t-INFORMAÇÕES DO USUÁRIO-\n\n");
 	
-	char* token = strtok(conteudo,",");  // dividindo o arquivo em token ate a virgula
+	char* token = strtok(conteudo,",");  // strtok=dividindo o arquivo em token ate a virgula (token apenas nome)
 	printf("CPF: %s\n", token);
 	
 	token = strtok(NULL,",");
@@ -118,12 +118,13 @@ int consulta()
 	token = strtok(NULL,",");
 	printf("CARGO: %s\n", token);
 	
-	
 	printf("\n\n");
+	
 	}
 	
 	system("pause");
-	fclose(file);			
+	fclose(file);
+				
 }
 
 int deletar()
@@ -149,7 +150,7 @@ int deletar()
 		printf("\t-DELETAR USUÁRIO-\n\n");
   			
 	}
-		while(fgets(conteudo, 200, file) != NULL )
+		while(fgets(conteudo, 200, file) != NULL )  // código para aparecer as informações do usuária que foi deletado
 	{
 	printf("\t-INFORMAÇÕES DO USUÁRIO-\n\n");
 	
