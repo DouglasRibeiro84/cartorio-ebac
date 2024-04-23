@@ -202,6 +202,7 @@ int main () //função do menu
 	  	printf("\t1. Registrar usuário\n");
 	  	printf("\t2. Consultar usuário\n");
 	 	printf("\t3. Deletar usuário\n\n");
+	 	printf("\t4. SAIR DO SISTEMA\n\n");
 	 	printf("Opção:");
 	 
 	  	scanf("%d", &opcao);  //scanf=armazendo comando do usuario
@@ -221,6 +222,11 @@ int main () //função do menu
 			case 3:
     	    deletar();
     	    break;
+    	    
+    	    case 4:
+    		printf("\t-OBRIGADO POR UTILIZAR O SISTEMA-\n\n");
+    		return 0;
+    		break;
     	 
 	    	default: //fim do encadeamento 
     	    printf("\t*OPÇÃO INDISPONÍVEL*\n");
